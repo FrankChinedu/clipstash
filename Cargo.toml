@@ -10,3 +10,5 @@ name = "clipstash"
 path = "src/lib/mod.rs"
 
 [dependencies]
+serde = {version ="*", features =["derive"]}
+serde_json="*"
