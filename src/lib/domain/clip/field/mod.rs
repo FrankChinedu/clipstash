@@ -1,5 +1,4 @@
-
-mod clip_id; 
+mod clip_id;
 pub use clip_id::ClipId;
 
 mod shortcode;
