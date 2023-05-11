@@ -51,6 +51,16 @@ impl From<&str> for ShortCode {
     }
 }
 
+use rocket::request::FromParam;
+
+impl<'r> FromParam<'r> for ShortCode {
+    type Error = &'r str;
+
+    fn from_param(param: &'r str) -> Result<Self, Self::Error> {
+        Ok(ShortCode::from(param))
+    }
+}
+
 impl FromStr for ShortCode {
     type Err = ClipError;
 
