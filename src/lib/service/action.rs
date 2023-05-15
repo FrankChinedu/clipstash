@@ -69,3 +69,8 @@ pub async fn api_key_is_valid(
 ) -> Result<bool, ServiceError> {
   Ok(query::api_key_is_valid(api_key, pool).await?)
 }
+
+pub async fn delete_expires(pool: &DatabasePool) -> Result<u64, ServiceError> {
+  Ok(query::delete_expired(pool).await?)
+}
+
